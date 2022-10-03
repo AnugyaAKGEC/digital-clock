@@ -26,7 +26,7 @@ function currentTime() {
     
    let time = hh + ":" + mm + ":" + ss + " " + session;
 
-   let pdate =  Monthoftheyear[date.getMonth()]  + " " + date.getDate() + " " + date.getFullYear() + " , " + weekday[date.getDate()] ; 
+   let pdate =  Monthoftheyear[date.getMonth()]  + " " + date.getDate() + " " + date.getFullYear() + " , " + weekday[date.getDay()] ; 
 
   document.getElementById("clock").innerText = time; 
   document.getElementById("greet").innerText = greeting; 
