@@ -1,14 +1,15 @@
 function currentTime() {
-  let date = new Date(); 
+  let date=new Date();
   let hh = date.getHours();
   let mm = date.getMinutes();
   let ss = date.getSeconds();
-
+  
   const weekday = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"]
-
+  const Monthoftheyear=["January","Febraury","March","April","May","June","July","August","September","October","November","December"]
+  
   let session = "AM";
   let greeting="Good Morning!!";
-  let day=weekday[date.getDay()];
+  
   if(hh > 12 && hh<=16){
       session = "PM";
       greeting="Good Afternoon!!";
@@ -25,10 +26,13 @@ function currentTime() {
     
    let time = hh + ":" + mm + ":" + ss + " " + session;
 
+   let pdate =  Monthoftheyear[date.getMonth()]  + " " + date.getDate() + " " + date.getFullYear() + " , " + weekday[date.getDate()] ; 
+
   document.getElementById("clock").innerText = time; 
   document.getElementById("greet").innerText = greeting; 
-  document.getElementById("day").innerText = day;
- 
+  document.getElementById("date").innerText = pdate;
+
+
 }
 
 setInterval(currentTime,1000);
